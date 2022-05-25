@@ -1,0 +1,38 @@
+
+
+.header_align {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    border-bottom: 1px solid lightgrey;
+    
+}
+.icon_design {
+    font-size: 27px;
+    margin-left: 15px;
+
+}
+.icons_align{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    flex-grow: 2;
+    padding-left: 2%;
+    padding-right: 2%;
+
+}
+a {
+    text-decoration: none;
+}
+.categoryList_card_design {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 2%;
+    gap: 1%;
+}
+.category_card_design {
+    margin-top: 2%;
+}
