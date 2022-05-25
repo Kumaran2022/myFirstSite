@@ -43,7 +43,7 @@ const [state,setState] = useState<any>([])
         slidesToScroll: 1
       };
        useEffect(()=>{
-     axios.get("https://thefishclub.tridotstech.com/api/method/ecommerce_business_store.ecommerce_business_store.api.get_category_products?route=fish")
+     axios.get("https://thefishclub.tridotstech.com/api/method/ecommerce_business_store.ecommerce_business_store.api.get_category_products?route=chicken")
     .then ((response:any)=>setState(response.data.message))
 setIsloading(false)
       },[]) 

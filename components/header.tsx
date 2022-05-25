@@ -64,7 +64,7 @@ return(<>
          <div className='icons_align'>
              {state.map((items:any)=>(
                  <div key={items.name}>
-             <Link href={"/get/"+items.route}><a><Image  src={url+items.mobile_image} width="25px"height="25px"/></a></Link>
+             <Link href={"/"+items.route}><a><Image  src={url+items.mobile_image} width="25px"height="25px"/></a></Link>
                  </div>
              ))}
              {/* <Link href={"chicken"}>link</Link> */}
