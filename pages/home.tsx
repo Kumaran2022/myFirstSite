@@ -3,7 +3,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import {} from "@fortawesome/free-brands-svg-icons"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import $ from "jquery"
-import Header from "../components/header"
+import Header from "../redux/container/header"
 
 export const getStaticProps = async(context:any) =>{
     const response = await fetch("https://thefishclub.tridotstech.com/api/method/ecommerce_business_store.ecommerce_business_store.api.get_parent_categories")

@@ -8,13 +8,17 @@ import '@fortawesome/fontawesome-free/css/all.css';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import 'react-loading-skeleton/dist/skeleton.css'
+import store from '../redux/store'
+import { Provider } from 'react-redux'
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return(
-    <Layout>
-<Component {...pageProps} />
 
+  return(
+    <Provider store={store}>
+   <Layout>
+<Component {...pageProps} />
     </Layout>
+    </Provider>    
   ) 
 }
 
