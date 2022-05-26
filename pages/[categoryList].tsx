@@ -24,7 +24,7 @@ const categoryList = (props:any) => {
         <>
         <div className="container">
             <div className="row">
-            <div className="col">
+            <div className="col-md-2">
                 {/* <div className="card" style={{backgroundColor:"#ff3e00",opacity:"0.8"}}>
                     <h3>Category List</h3>
                     {props.data.map((items:any)=>(
