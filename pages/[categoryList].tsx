@@ -15,7 +15,7 @@ export const getServerSideProps = async(context:any) =>{
                           }
        }
 }
-const categoryList = (props:any) => {
+const CategoryList = (props:any) => {
     const [isLoading,setIsloading] = useState<any>("")
     console.log(isLoading);
     Router.events.on("routeChangeStart",(url)=>{
@@ -36,7 +36,7 @@ const categoryList = (props:any) => {
 
             <div className="row">
             {isLoading == "true" ?
-                        <div className="col-md categoryList_card_design">
+                        <div className="col-md C_card_design">
 
         <div className="card category_card_design" style={{padding:"1%"}}>
           <Skeleton height={100}></Skeleton><br/>
@@ -100,6 +100,6 @@ const categoryList = (props:any) => {
         </>
     )
 }
-export default categoryList
+export default CategoryList
 
 
