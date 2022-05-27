@@ -36,7 +36,7 @@ const CategoryList = (props:any) => {
 
             <div className="row">
             {isLoading == "true" ?
-                        <div className="col-md C_card_design">
+            <div className="col-md categoryList_card_design">
 
         <div className="card category_card_design" style={{padding:"1%"}}>
           <Skeleton height={100}></Skeleton><br/>
