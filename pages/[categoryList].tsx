@@ -1,25 +1,78 @@
 import axios from "axios"
 import { data } from "jquery";
 import Image from "next/image";
+import Router from "next/router";
+import { useEffect, useState } from "react";
+import Skeleton from "react-loading-skeleton";
 
 export const getServerSideProps = async(context:any) =>{
     const {params} = context
     const {categoryList} = params
     const response = await axios.get("https://thefishclub.tridotstech.com/api/method/ecommerce_business_store.ecommerce_business_store.api.get_category_products?route="+categoryList+"")
     return {
-           props : {data:response.data.message       
+           props : {data:response.data.message,
+            loading :false       
                           }
        }
 }
 const categoryList = (props:any) => {
+    const [isLoading,setIsloading] = useState<any>("")
+    console.log(isLoading);
+    Router.events.on("routeChangeStart",(url)=>{
+        setIsloading("true")
+    })
+    Router.events.on("routeChangeComplete",(url)=>{
+     setIsloading("false");
+ })
     console.log(props);
     const url = "https://thefishclub.tridotstech.com"
+ 
 
+    
     return( 
         <>
         <div className="container">
+        
+
             <div className="row">
-            <div className="col-md categoryList_card_design">
+            {isLoading == "true" ?
+                        <div className="col-md categoryList_card_design">
+
+        <div className="card category_card_design" style={{padding:"1%"}}>
+          <Skeleton height={100}></Skeleton><br/>
+          <h6><Skeleton/></h6>
+          <div className="for_cardFlex">
+                 <h5 style={{ width:"40%" }}><Skeleton/></h5>
+                 <div style={{ width:"40%" }}><Skeleton /></div>
+             </div>
+            </div>
+            <div className="card category_card_design" style={{padding:"1%"}}>
+          <Skeleton height={100}></Skeleton><br/>
+          <h6><Skeleton/></h6>
+          <div className="for_cardFlex">
+                 <h5 style={{ width:"40%" }}><Skeleton/></h5>
+                 <div style={{ width:"40%" }}><Skeleton /></div>
+             </div>
+            </div>
+            <div className="card category_card_design" style={{padding:"1%"}}>
+          <Skeleton height={100}></Skeleton><br/>
+          <h6><Skeleton/></h6>
+          <div className="for_cardFlex">
+                 <h5 style={{ width:"40%" }}><Skeleton/></h5>
+                 <div style={{ width:"40%" }}><Skeleton /></div>
+             </div>
+            </div>
+            <div className="card category_card_design" style={{padding:"1%"}}>
+          <Skeleton height={100}></Skeleton><br/>
+          <h6><Skeleton/></h6>
+          <div className="for_cardFlex">
+                 <h5 style={{ width:"40%" }}><Skeleton/></h5>
+                 <div style={{ width:"40%" }}><Skeleton /></div>
+             </div>
+            </div>
+            </div>
+             :
+             <div className="col-md categoryList_card_design">
                 {props.data.map((items:any)=>(
                     <div key={items.name} className="card category_card_design">
                     <div>
@@ -34,9 +87,13 @@ const categoryList = (props:any) => {
                                      </div>
                                  </div>
                 </div>
-                ))}
-                
+                ))}               
             </div>
+             }
+
+
+
+            
             </div>
             
         </div>
