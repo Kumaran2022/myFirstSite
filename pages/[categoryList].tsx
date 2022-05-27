@@ -17,28 +17,22 @@ const categoryList = (props:any) => {
 
     return( 
         <>
-        <div className="container-fluid">
+        <div className="container">
             <div className="row">
-            <div className="col-md-2">
-                {/* <div className="card">
-                    <h3>Category</h3>
-                    <select>All</select>
-                    {props.data.map((items:any)=>(
-                    <div key={items.name}>
-                        <Image src={items.product_image.startsWith("http") ? items.product_image :url+ items.product_image}
-                         alt="" width={"80px"} height="50px"></Image>
-                    </div>
-
-                    ))}
-                </div> */}
-            </div>
-            <div className="col-md-10 categoryList_card_design">
+            <div className="col-md categoryList_card_design">
                 {props.data.map((items:any)=>(
                     <div key={items.name} className="card category_card_design">
                     <div>
                         <Image src={items.product_image.startsWith("http") ? items.product_image :url+ items.product_image} 
-                        alt="" width={"200px"} height="100px"/>
+                        alt="" width={"260px"} height="120px"/>
                     </div>
+                    <div className="card-body" style={{ float: "left" }}>
+                                     <h6>{items.item}</h6><br />
+                                     <div className="for_cardFlex">
+                                         <h5 style={{ fontWeight: "bold", color: "#484848" }}>₹{items.price}</h5>
+                                         <button className="btn btn-sm btn_design"><span><i className="fas fa-shopping-cart"></i></span> add</button>
+                                     </div>
+                                 </div>
                 </div>
                 ))}
                 
